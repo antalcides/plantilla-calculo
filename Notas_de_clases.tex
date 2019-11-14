@@ -1,0 +1,52 @@
+\batchmode
+\makeatletter
+\def\input@path{{styles/}{sections/}{pdf/}{chapters/}}
+\makeatother
+\documentclass[svgnames,11pt]{book}%
+\input{styles/Paquetes}
+\usepackage{float}
+\input{styles/newcomman}
+\input{styles/Plantilla}
+\usepackage[frame,letter,center,dvips]{crop} %quiar al final 
+\RequirePackage{hyperref}
+\hypersetup{
+             linktoc=all,
+             hidelinks,
+             pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor = ptctitle,
+            backref=true,
+            pagebackref=true,
+            hyperindex=true,
+            breaklinks=true,
+            urlcolor=ocre,
+            citecolor = ocre,
+            bookmarks=true,
+            bookmarksopen=false,
+            pdftitle={Title},
+            pdfauthor={Author}
+                              }
+
+%
+%\cfoot{De la Cruz - De Oro - Díaz - Grau - Vasquez}
+\definecolor{bistre}{rgb}{.75,.50,.30}
+\definecolor{Maroon}{rgb}{0.5,0.0,0.0}%{.80,.80,.95}
+\definecolor{fondpaille}{cmyk}{0,0,0.1,0}
+\pagecolor{fondpaille}
+\usepackage{amsmath,tkz-fct}
+\usepackage{tkz-tab,tkz-euclide}
+\usepackage{tikz-dimline}
+\usetkzobj{all}
+%\color{Maroon}
+\tkzSetUpColors[background=fondpaille,text=Maroon]
+\usetikzlibrary{babel}
+\usetikzlibrary{mindmap,trees}
+\begin{document}
+
+%\tableofcontents
+
+\input{sections/Prologo}
+\input{sections/Sec_11}
+\input{sections/Sec_12-13} 
+
+\end{document} 

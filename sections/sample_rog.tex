@@ -1,0 +1,100 @@
+%
+% Sample SBC book chapter
+%
+% This is a public-domain file.
+%
+% Charset: ISO8859-1 (latin-1) áéíóúç
+%
+\documentclass{SBCbookchapter}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil,english]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+%\author{Darling Vasquez Cassis}
+\title{Aplicaciones de la integral}
+
+\begin{document}
+
+\maketitle
+
+
+\parbox{70mm}{¿Que vas a aprender?\\A usar la integral definida para determinar el área, dada una región plana limitada por dos o más curvas. Plantear una integral que permita determinar el volumen de un sólido de revolución, introduciendo elementos diferenciales convenientes, usando métodos como el de discos, arandelas o capas.
+Usar la integral definida para calcular la longitud de una curva plana, que es la gráfica de una función con derivada continua en un intervalo cerrado.}
+\hfill
+\parbox{50mm}{Subtemas:
+\begin{enumerate}
+    \item Área bajo una curva.
+    \item Área de una región entre dos curvas.
+    \item Volumen: Métodos de los discos, arandelas y  capas.
+    \item Longitud de arco.
+    \item Integrales impropias.
+\end{enumerate}}
+
+\textbf{Mapa conceptual del capítulo:}
+\begin{center}
+    \includegraphics[scale=0.6]{mapa.png}
+\end{center}
+\begin{center}
+    \textbf{Resumen}
+\end{center}
+En este capítulo se evoca el concepto de antiderivada, estudiado anterirormente, para dar solución al problema de calcular el área de una región plana, utilizando el teorema fundamendal del cálculo.
+Se estudian las herramientas para plantear una integral que permita determinar el volumen de un sólido en revolución, introduciendo elementos diferenciales convenientes, usando métodos como el de los discos, las arandelas y las capas, también llamadas cascarones cilíndricos.
+Además se usa la integral definida para calcular la longitud de una curva plana, que es la gráfica de una función con derivada continua en un intervalo cerrado.
+
+\section{Area bajo una curva (Breve repaso)}
+
+\usepackage{multirow}
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+& \multicolumn{3}{c|}{Europa} \\
+\cline{2-3}
+& Ciudad & Río & Símbolo\\
+\hline \hline
+\multirow{3}{1cm}{España} & Madrid & Manzanares & Cibeles\\ \cline{2-4}
+& Sevilla & Guadalquivir & Giralda\\ \cline{2-4}
+& Zaragoza & Ebro & Pilar\\ \cline{1-4}
+Francia & París & Sena & Torre Eiffel\\ \cline{1-4}
+\multirow{2}{1cm}{Italia} & Roma & Tíber & San Pedro\\ \cline{2-4}
+& Milán & \multicolumn{1}{c|}{-} & Duomo\\ \cline{1-4}
+\end{tabular}
+\caption{Tabla muy bonita.}
+\label{tabla:final}
+\end{table}
+
+
+
+
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{Aplicaciones de la Integral}\\
+\hline
+Aplicación & Problema & \multicolumn{3}{|c|}{Fórmula} \\
+\hline \hline
+Area bajo una curva & Hallar el área bajo $f(x)$, entre  & \int_{a}^{b}  & \int_{a}^{b}  & \\
+
+\cline{1-5}
+Area entre curvas & ocho & \multicolumn{3}{|c|}{nueve} \\
+
+\cline{1-5}
+Volumen por discos & once & doce & trece & \\
+
+\cline{1-5}
+Volumen por arandelas & dos & tres & cuatro  & \\
+\cline{1-5}
+Volumen por capas & Hallar el volumen generado al girar  & tres & cinco  & \\
+\cline{1-5}
+Longitud de arco & Encuentrar la longitud de $f(x)$ en $[a,b]$ & seis   & seis  &\\
+\cline{1-5}
+Integral Impropia & Calcular la integral impropia & dos & tres & siete \\
+\hline
+\end{tabular}
+
+
+\end{document}

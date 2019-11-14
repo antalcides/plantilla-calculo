@@ -1,0 +1,753 @@
+ 
+
+\section{Integraci\'on por sustituci\'on}
+ En la anterior secci\'on, trabajamos reglas de integraci\'on  relacionadas con las reglas de diferenciaci\'on b\'asica. Ahora, presentamos un m\'etodo de integraci\'on llamado m\'etodo de sustituci\'on o cambio de variable, que est\'a relacionado con la regla de la cadenas. A partir de esta regla trataremos de buscar un m\'etodo eficaz para resolver integrales de funciones compuestas.
+
+ Sea $F:I\rightarrow \R$ una primitiva de la funci\'on $f:I\rightarrow \R$ en el intevalo  $I$ y $g:I\rightarrow \R$ una funci\'on derivable tal que $\mbox{Im}(g) \subset I$. Usuando la regla de la cadena, tenemos
+$$(F(g(x)))^{\prime}=F^{\prime}(g(x))g^{\prime}(x)=f(g(x))g^{\prime}(x).$$
+Luego, $F(g(x))$ es una primitiva de $f(g(x))g^{\prime}(x)$. Por tanto,
+\begin{align} \label{sustitucion} 
+ \int f(g(x))g^{\prime}(x) dx= F(g(x))+ C. 
+\end{align}
+%\noindent suponiendo que $F^{\prime}(x)=f(x)$. Es decir, $F(x)$ es antiderivada de $f(x)$. De lo anterior se establece la  técnica de integración, llamada  sustituci\'on, que permite calcular integrales de la forma
+%$$\int f(g(x))\cdot g^{\prime}(x)dx.$$
+Realizando la sustituci\'on, 
+$$ u=g(x) \Rightarrow du=g^{\prime}(x)\ dx, $$
+tenemos que la expresi\'on \eqref{sustitucion}, se transforma en la siguiente 
+\begin{align*}
+ \int f(g(x))  g^{\prime}(x)dx= \int f(u)du = F(u) + C =F(g(x))+C.
+\end{align*}
+Como consecuencia de lo anterior, obtenemos el siguiente teorema, 
+\begin{teorema}{Sustituci\'on}{AFC}\label{teo-regla-cadena-int}
+Sea $F:I\rightarrow \R$ una primitiva de la funci\'on $f:I\rightarrow \R$ en el intevalo  $I$ y $g:I\rightarrow \R$ una funci\'on derivable tal que $\mbox{Im}(g) \subset I$. Entonces $$\int f(g(x))g'(x)dx = F(g(x))+C.$$
+\end{teorema}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Ejemplo} $\displaystyle\int \sin^{3}(x)\cos(x)\,dx$
+\end{Ejemplo}
+\begin{proof}
+%Observemos que la integral no se calcula a partir de las reglas b\'asicas de integraci\'on. Adem\'as,
+%$$\displaystyle\int \cos(x)\sin^{3}(x)\,dx \neq \displaystyle\int \cos(x)\,dx \cdot \displaystyle\int  \sin^{3}(x)\,dx. $$
+%Sin embargo, en el integrando se encuentra $\sin(x)$ y su derivada, $\cos(x)$. Esto \'ultimo nos permite reconocer el patr\'on tomando 
+Si  $\red{u=\sin(x)}$, entonces $\red{du=\cos(x)\,dx }.$ Al reemplazar, resulta una integral inmediata,
+\begin{equation*}
+\int \sin^{3}(x)\cos(x)\,dx=\int u^{3}\,du=\frac{u^4}{4}+C.
+\end{equation*}
+Una vez resulta, retomamos la variable inicial  $u=\sin(x)$
+$$\displaystyle\int \sin^{3}(x)\cos(x)\,dx =\frac{1}{4}\sin^{4} (x) +C$$
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+
+\begin{Ejemplo} Calcular $\displaystyle\int x\sqrt{1+x^{2}}\,dx$
+ \end{Ejemplo}
+ \begin{proof}
+
+Sea $\red{u=1+x^{2}},$ entonces $\red{du=2x\,dx}$. A diferencia del ejemplo anterior el diferencial no aparece de forma inmediata y es necesario  agregarle factores constantes al integrando que no alteren la funci\'on. Por ejemplo,
+$$\displaystyle\int x\sqrt{1+x^{2}}\,dx=\frac{2}{2}\displaystyle\int  x\sqrt{1+x^{2}}\,dx=\frac{1}{2}\displaystyle\int  2x\sqrt{1-x^{2}}\,dx $$
+Lo anterior se suele hacer despejando  el diferencial
+$$du=2x\,dx \  \Rightarrow \ \frac{1}{2} du=x\,dx $$
+Sustituyendo en la integral tenemos
+\begin{align*}
+\displaystyle\int x\sqrt{1+x^{2}}\,dx &=\frac{1}{2}
+\int u^{1/2}\,du=\frac{1}{3}u^{3/2}+C\\
+&=\frac{1}{3}(1+x^{2})^{3/2}+C
+\end{align*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{Ejemplo} Calcula $\displaystyle\int(5+3x^3)^4 x^2 dx$
+%\end{Ejemplo}
+%\begin{proof}
+
+%\end{proof}
+% Sea $\red{  u = 5+3x^3 }$ entonces   $\red{ du  =  9x^2dx}$ y $\red{\dfrac{du}{9}=x^2dx}$
+%  \begin{eqnarray*}
+%    \displaystyle\int(5+3x^3)^4 x^2 dx = \frac{1}{9}\int u^4 du=\frac{u^5}{45}+C=\frac{(5+3x^3)^5}{45}+C
+%     \end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+%\begin{Ejemplo} Calcula $\displaystyle\int x\cos (x^2) dx $
+%\end{Ejemplo}
+%\solucion \\
+%Sea $ \red{u  =  x^2}$ entonces \quad  $\red{du  =  2xdx} $
+%  \begin{eqnarray*}
+%   \displaystyle\int x\cos (x^2) dx = \frac{1}{2}\int\cos (u)\;d\;u\; =\frac{1}{2} \sen u+C=\frac{1}{2}\sen (x^2)+C\\
+%      \end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ \begin{Ejemplo} Calcula $\displaystyle\int \left[ (2x-1)e^{x^2-x}+2\pi \sen (2\pi x) \right] dx $
+\end{Ejemplo}
+\begin{proof}
+
+Aplicando las propiedad
+$$\displaystyle\int \left[ (2x-1)e^{x^2-x}+2\pi \sen (2\pi x) \right] dx =\displaystyle\int (2x-1)e^{x^2-x}  dx + \displaystyle\int  2\pi \sen (2\pi x)   dx $$
+Identificamos que cada integral tiene una sustituci\'on diferente. Sean
+\begin{center}
+$ \red{u  =  x^2-x}$  \quad  $\red{du  = ( 2x-1)dx} $ \ y  \ $ \red{v  =  2\pi x}$  \quad  $\red{dv  =  2\pi dx} $
+\end{center}
+\vspace*{-0.1cm}
+\begin{align*}
+ \displaystyle\int \left[ (2x-1)e^{x^2-x}+2\pi \sen (2\pi x) \right]\ dx &= \int e^{u}du + \int \sen (v)dv  \\
+ &= e^{x^2-x}- \cos (2\pi x)+ C
+\end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textcolor{red!50!black}{\Large \bf Sustituir y despejar} \\
+
+\noindent En los siguientes ejercicios no basta con identificar la funci\'on y su derivada, es necesario realizar un despeje para poder sustituir el integrando.
+
+\newpage
+
+\begin{Ejemplo} Hallar $\displaystyle\int x^5 \sqrt{x^2+4}\,dx$  \end{Ejemplo}
+ \begin{proof}
+Al tomar $\red{u=x^{2}+4}$,  se obtiene   $\red{\frac{1}{2}\,du=x\,dx}$. En el integrando no aparece explicitamente el diferencial pero  al aplicar las  propiedades de la potenciaci\'on lo obtenemos,
+$$x^5 \ dx=x^4\red{ x\ dx}$$
+Ahora, nuestra integral tiene la siguiente forma
+ $$\displaystyle\int x^5 \sqrt{x^2+4}\,dx= \frac{1}{2}\displaystyle\int x^{4}  \sqrt{u}\,du$$
+Inicialmente la sustituci\'on no permite cambiar totalmente la variable en el integrand, pero al despejar x en términos de u y elevar al cuadrado superamos el himpase.
+\begin{center}
+ $\red{u=x^{2}+4}$ entonces $\displaystyle
+\red{u-4=x^2 }$ \  y \ $\red{(u-4)^2 =x^4} $.\end{center}
+
+Por lo tanto,
+$$\int  x^5 \sqrt{x^2+4}  \,dx= \frac{1}{2}\int  (u-4)^2 u^{1/2} \,dx $$
+Integrando y retomando la variable inicial resulta
+\begin{align*}
+ \frac{1}{2}\int  (u-4)^2 u^{1/2} \,dx &=\frac{1}{2}\int (u^2-2u+16)u^{1/2} \ du \\
+& = \frac{1}{2}\int (u^{5/2}-2u^{3/2}+16u^{1/2})\ du\\
+& =\frac{1}{7}u^{7/2}-\frac{2}{5}u^{5/2}+\frac{16}{3}u^{3/2}+C \\
+&=\frac{1}{7}(x^{2}+4)^{7/2}-\frac{2}{5}(x^{2}+4)^{5/2}+\frac{16}{3}(x^{2}+4)^{3/2}+C
+\end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\begin{Ejemplo} Hallar $ \displaystyle\int \dfrac{4lnx}{x \sqrt{lnx +4}} \,dx$ \end{Ejemplo}
+% \solucion \\
+%Sea $\red{u=lnx+4}$ y $\red{du=\frac{1}{x}\,dx}$. Para obtener el numerador despejamos; $\displaystyle\red{u-4=lnx }$.
+%
+%\begin{align*}
+%\displaystyle\int \frac{4lnx}{x \sqrt{lnx +4}} \,dx
+% =&   4\int\frac{u+4}{\sqrt{u}}   \,du
+% =  4\int u^{1/2}+4u^{-1/2} dx \\
+% = &\frac{8}{3} u^{3/2} + 32 u^{1/2} +C
+% = \frac{8}{3} (lnx+4)^{3/2} + 32 (lnx+4)^{1/2}+ C
+%\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+
+%\begin{Ejemplo} Hallar $\displaystyle\int\frac{e^{(5 \ln(x)-x)} \sqrt{x^2+4}}{e^{x}}\,dx$  \end{Ejemplo}
+% \solucion  \\
+%Simplificando obtenemos,
+%\begin{eqnarray*}
+%\displaystyle\int\frac{e^{(5 \ln(x)+x)} \sqrt{x^2+4}}{e^{x}}\,dx &=& \displaystyle\int\frac{e^{5 \ln(x)}e^{x} \sqrt{x^2+4}}{e^{x}}\,dx= \displaystyle\int x^5  \sqrt{x^2+4}  \,dx
+%\\&=& \frac{1}{7}(x^{2}+4)^{7/2}-\frac{2}{5}(x^{2}+4)^{5/2}+\frac{16}{3}(x^{2}+4)^{3/2}+C
+%\end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+%\begin{Ejemplo} Calcula $\displaystyle \int\frac{x\, dx}{\sqrt{-2x-x^2}} dx $
+%\end{Ejemplo}
+%Inicialmente reescribimos el integrando sumando y retando uno en el denominador
+%\begin{align*}
+% \displaystyle\int\frac{x\, dx}{\sqrt{-2x-x^2}} &=  \int\frac{x\, dx}{\sqrt{-(2x+x^2)}} =  \int\frac{x\, dx}{\sqrt{1-(x^2+2x+1)}}\\
+%    &=  \int\frac{x\, dx}{\sqrt{1-(x+1)^2}}
+%\end{align*}
+%Ahora, aplicamos la sustituci\'on   $\red{u=x+1}$ y $\red{du=dx}$, y despejando $\red{x=u-1}$  obtenemos,\\
+%\begin{align*}
+%\int\frac{x\, dx}{\sqrt{1-(x+1)^2}} &=\int\frac{u\, du}{\sqrt{1-u^2}} - \int\frac{du}{\sqrt{1-u^2}} \\
+%&= - \sqrt{1-u^2} -  \arcsin(u) + C\\
+%& = - \sqrt{1-u^2} - \arcsin(x+1) + C
+%\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{Ejemplo} Calcula $\displaystyle\int\frac{x^3}{\sqrt{1-2x^2}}dx $ \end{Ejemplo}
+%\solucion  \\
+% Tomando $\red{u^2=1-2x^2}$ \ obtenemos que \ $ \red{ -\dfrac{1}{2}udu=x\;dx}$. Entonces
+%\begin{eqnarray*}
+% \displaystyle\int\frac{x^3}{\sqrt{1-2x^2}} \ dx  &=&  \displaystyle\int\frac{x^2 \ (x \ dx )}{\sqrt{1-2x^2}}=\int \frac{ \left(\frac{1-u^{2} }{2}\right)\left(-\frac{1}{2}u \right) }{u}\ du \\
+%&=& -\frac{1}{4}\displaystyle\int\frac{(1-u^2)u}{u}\;d\;u=-\frac{1}{4}\int(1-u^2)du \\
+%&=& -\frac{u}{4}+\frac{u^{3}}{12}+C=-\frac{\sqrt{1-2x^2}}{4}+\frac{(1-2x^2)^{3/2}}{12}+C
+% \end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ \textcolor{red!50!black}{\Large \bf Doble sustituci\'on } \\
+
+En algunos casos se debe realizar dos sustituciones
+
+\begin{Ejemplo}\label{eje212} Calcula $\displaystyle\int\frac{x\;dx}{(x+1)-\sqrt{x+1}}$  \end{Ejemplo}
+ \begin{proof}
+
+Sea $\red{u=x+1}$, entonces  $\red{du=dx}$.
+
+$$\displaystyle\int\frac{x\;dx}{(x+1)-\sqrt{x+1}}=\displaystyle\int\frac{u-1\;du}{u-\sqrt{u}}=\int\frac{(u-1)du}{\sqrt{u}(\sqrt{u}-1)}$$
+Observando que la sustituci\'on no fue suficiente para calcular la integrar, se plantea una nueva. \\
+
+Sea $\red{z=\sqrt{u}}$. Entonces  $\red{dz=\dfrac{1}{2\sqrt{u}}\,du}$.
+\begin{align*}
+\displaystyle\int\frac{(u-1)du}{\sqrt{u}(\sqrt{u}-1)}&=2\displaystyle\int \frac{z^2-1}{z-1}dz \\
+&= 2\displaystyle\int ( z +1 ) dz \\
+&= z^2+2z+C \\
+&=(\sqrt{u})^2+2\sqrt{u}+C \\
+&=x+2\sqrt{x+1}+C \\
+\end{align*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\begin{Ejemplo}  Calcula $\displaystyle\int\frac{x\  dx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}}dx$ \end{Ejemplo}
+%\begin{proof}
+%
+%Sea $\red{u=1+x^2}$ y $\red{du=2xdx}$.
+% $$\displaystyle\int\frac{xdx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}}  =  \frac{1}{2}\int\frac{du}{\sqrt{u+u^{3/2}}}$$
+%Realizando, nuevamente,  sustituci\'on con  $\red{u=z^2}$ y $\red{du=2z\ dz}$ obtenemos
+%\begin{align*}
+%\frac{1}{2}\displaystyle\int\frac{du}{\sqrt{u+u^{3/2}}}=& \frac{1}{2} \displaystyle\int\frac{2z\;dz}{\sqrt{z^2+z^3}}=\displaystyle\int\frac{z\;dz}{z\sqrt{1+z}}=\displaystyle\int\frac{dz}{(1+z)^{1/2}}\\
+%\end{align*}
+%Tomando a $w=1+z$ y $dw=dz$, resulta
+%$$\displaystyle\int\frac{dz}{(1+z)^{1/2}}=\displaystyle\int w^{-1/2} dw=2w^{1/2}+C$$
+% Por lo tanto,
+% $$\displaystyle\int\frac{xdx}{\sqrt{1+x^2+\sqrt{(1+x^2)^3}}}dx = 2(1+\sqrt{1+x^2})^{1/2}+C $$
+%
+%\end{proof}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+%
+%\newpage
+
+\textcolor{red!50!black}{\Large \bf Funciones Exponenciales y Logar\'itmicas}\\
+
+\noindent A partir de la t\'ecnica de sustituci\'on las reglas b\'asicas pueden generalizarse. Por ejemplo,
+
+\begin{table}[h]
+\begin{tcolorbox}[boxrule=0.2pt, enhanced,sharp corners,   width=12cm,colframe=blue!8!black,colback=blue!5!white,drop lifted shadow=blue ]
+\begin{multicols}{2}
+\begin{enumerate}
+
+  \item $\displaystyle \int \frac{f^{\prime}(x)}{f(x)} \,dx= \ln |f(x)|+C$
+  \item $\displaystyle \int e^{f(x)}f^{\prime}(x)\,dx=e^{f(x)}+C$
+  \columnbreak
+  \item $\displaystyle \int a^{f(x)}f^{\prime}(x)\,dx=\frac{a^{f(x)}}{\ln(a)}+C.$
+\end{enumerate}
+\end{multicols}
+\end{tcolorbox}
+\end{table}
+
+%\begin{observacion}{Propiedades del logaritmo}{}
+%Si $a$ y $b$ son n\'umeros positivos y $n$ es racional, se satisfacen las siguientes propiedades
+%\begin{enumerate}
+%\item $\ln(1)=0$
+%\item $\ln(ab)=\ln(a)+\ln(b)$
+%\item $\ln(a^n)=n\ln(a)$
+%\item $\ln \left(\frac{a}{b}\right)=\ln(a)-\ln(b)$
+%\end{enumerate}
+%\end{observacion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejemplo} Hallar $\displaystyle\int \frac{1}{4x-1} \,dx$ 
+\end{Ejemplo}
+\begin{proof}
+Haciendo $\red{u=4x-1}$ tenemos que  $\red{du=4\,dx}$
+
+ \begin{align*}
+ \int \frac{1}{4x-1} \,dx & = \frac{1}{4} \int \frac{1}{u} \,du  = \frac{1}{4}
+ \ln|u|+C  =\frac{1}{4}\ln|4x-1|+C
+ \end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ \begin{Ejemplo} Calcular  $\displaystyle\int{\dfrac{1}{x\ln x}}\, dx$  \end{Ejemplo}
+\begin{proof}
+ Haciendo  $\red{u=\ln x}$,   entonces \ \ $\red{du=\frac{1}{x}dx}$,   de modo que
+
+\begin{equation*}
+\int \frac{dx}{x\ln x} =\int \frac{1}{\ln x}\frac{1}{x}\,dx   = \int \frac{1}{u}\,du
+ = \ln |u|+ C,
+\end{equation*}
+ y recuperando la variable nos queda que
+\begin{equation*}
+\int \frac{1}{x\ln x}\,dx= \ln |\ln x| + C.
+\end{equation*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% \begin{Ejemplo} Calcular  $\displaystyle\int{\dfrac{1}{x (\ln x)^{3}}}\, dx$  \end{Ejemplo}
+% \solucion\\
+%Sea $\red{u=\ln x}$ y  $\red{du=\frac{1}{x}\ dx}$
+%
+%\begin{equation*}
+%\displaystyle\int{\dfrac{1}{x (\ln x)^{3}}}\, dx  =  \displaystyle\int\dfrac{du}{ u^{3}} =\displaystyle\int u^{-3}du= \frac{1}{2u^{2}}+C
+%\end{equation*}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+ \begin{Ejemplo} Encontrar $\displaystyle\int e^{3x+1}\,dx$ 
+ \end{Ejemplo}
+\begin{proof}
+ Sea $\red{u=3x+1}$  entonces $ \red{du=3\,dx }$. Despejando \ \ $\red{\frac{du}{3}=dx} $
+\begin{align*}
+ \int e^{3x+1}\,dx & =\int e^{u}\left(\frac{du}{3}\right)  =\frac{1}{3}\int
+e^{u}\,du  =\frac{1}{3}e^{u}+C =\frac{1}{3}e^{3x+1}+C
+\end{align*}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{Ejemplo} Encontrar $\displaystyle\int 5xe^{-x^2}\,dx$  
+\end{Ejemplo}
+\begin{proof}
+ Sea $\red{u=-x^{2}}$   entonces  $ \red{du=-2x\,dx}$. Despejando $ \red{-\frac{du}{2}=x\,dx}$
+\begin{align*}
+ \int 5xe^{-x^2}\,dx  &=5\int e^{-x^2}(x\,dx)=5\int e^{u}\left(-\frac{du}{2}\right)  \\ &=-\frac{5}{2}\int
+e^{u}\,du =-\frac{5}{2}e^{u}+C  =-\frac{5}{2}e^{-x^2}+C
+\end{align*}
+\end{proof}
+
+%\begin{Ejemplo} Calcular $\displaystyle \int 3^{x\ln(x)}(\ln(x)+1)\,dx$ \end{Ejemplo}
+% \solucion\\
+% Sea $\red{u=x\ln(x)}$   entonces  $ \red{du=(\ln(x)+1)\,dx} $.
+%\begin{align*}
+% \int 3^{x\ln(x)}(\ln(x)+1)\,dx =\int
+%3^{u}\,du  =\frac{3^{u}}{\ln(3)}+C  =\frac{3^{x\ln(x)}}{\ln(3)}+C
+%\end{align*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent \textcolor{red!50!black}{\Large \bf   Funciones trigonom\'etricas} \\
+
+\noindent
+En en la Secci\'on. 1.1 estudiamos las integrales de funciones trigonom\'etricas a partir de la relaci\'on con la
+derivada. Por medio de la integral por sustituci\'on, se puede completar el conjunto de reglas
+b\'asicas de integraci\'on   trigonom\'etricas b\'asicas. Por ejemplo la integral de $\tan(u)$, $\cot(u)$ o
+$\csc(u)$ \\
+
+%\begin{Ejemplo}\large
+%Calcular $\displaystyle \int \tan(x)\,dx$
+%\end{Ejemplo}
+%
+%\solucion Usando la identidad trigonom\'etrica se tiene que
+%\begin{equation*}
+%\int \tan(x)\,dx =\int \frac{\sen(x)}{\cos(x)}\,dx.
+%\end{equation*}
+%
+%\noindent Haciendo $\red{u= \cos(x)}$, tenemos que $\red{du= -\sen(x)\,dx}$, por lo que
+%
+%\begin{equation*}
+% \int \tan(x)\,dx =\int
+%\frac{\sen(x)}{\cos(x)}\,dx  =-\int\frac{du}{u} =-\ln \left| u \right| +C
+%=- \ln\left| \cos(x) \right| +C.
+%\end{equation*}
+
+\begin{Ejemplo}
+Hallar la integral $\displaystyle\int\cot x\,dx$
+\end{Ejemplo}
+\begin{proof}
+Usando la identidad trigonom\'etrica de $\cot(x)$ tenemos que
+
+\begin{equation*}
+\int \cot(x)\,dx =\int\frac{\cos(x)}{\sen(x)}\,dx.
+\end{equation*}
+
+\noindent Sea $\red{u=\sen(x)}$ entonces $\red{du=\cos(x)\,dx}$, y sustituyendo nos queda
+
+\begin{equation*}
+\int \cot(x)\,dx =\int\frac{\sen(x)}{\cos(x)}\,dx   =\int
+\frac{du}{u}  =\ln|u|+C  =\ln\left|\sen(x)\right|+C.
+\end{equation*}
+
+%\noindent Como no se hizo cambio en los l\'imites de integraci\'on se sigue
+%
+%\begin{align*}
+%\int_{\pi/4}^{\pi/2}\cot(x)\,dx& =\ln\left|\sen(x)\right|\Big]_{\pi/4}^{\pi/2}
+%=\ln\left|\sen\left(\pi/2\right)\right|-\ln\left|\sen\left(\pi/4\right)\right| \\
+%& =\ln(1)-\ln\left(\sqrt{2}/2\right) =-\ln\left(\sqrt{2}/2\right).
+%\end{align*}
+\end{proof}
+
+%\newpage
+
+\begin{Ejemplo}
+Hallar $\displaystyle\int \sec(x) \,dx$
+\end{Ejemplo}
+
+\begin{proof}
+ Multiplicamos y dividimos en el integrando por $\tan(x)+\sec(x)$ entonces
+\begin{align*}
+\int \sec(x) \,dx = \int \sec (x)  \frac{\tan(x)+\sec(x)}{\tan(x)+\sec(x)}\,dx = \int
+\frac{\sec(x)\tan(x)+\sec^2 (x)}{\tan(x)+\sec(x)}\,dx.
+\end{align*}
+
+\noindent Ahora bien, sea $\red{u=\tan(x)+\sec(x)}$ por lo que $\red{du= (\sec(x)\tan(x)+\sec^2(x))\,dx}$
+\begin{align*}
+\int\frac{\sec(x)\tan(x)+\sec^2(x)}{\tan(x)+\sec(x)}\,dx=\int\frac{du}{u}=\ln\left|\tan(x)+\sec(x)\right|+C.
+\end{align*}
+
+\noindent En conclusi\'on, $\displaystyle \int \sec(x) \,dx= \ln\left|\tan(x)+\sec(x)\right|+C$.
+\end{proof}
+
+
+%\begin{Ejemplo}
+%Hallar $\displaystyle\int\csc(x) \,dx$
+%\end{Ejemplo}
+%\solucion \\
+% Realizando los pasos analogos al ejercicio anterior, debemos multiplicar y dividir
+%$\cot(x)+\csc(x)$ en el integrando
+%
+%\begin{equation*}
+%\int\csc(x)\,dx=\int\csc(x)\frac{\cot(x)+\csc(x)}{\cot(x)+\csc(x)}\,dx=\int\frac{\csc(x)\cot(x)+\csc^2(x)}{
+%\cot(x)+\csc(x)}\,dx.
+%\end{equation*}
+%
+% \noindent Sea $\red{u=\csc(x)+\cot(x)}$ \ entonces \ $\red{du=(-\csc(x)\cot(x)-\csc^2(x)})\,dx$.
+%
+%\begin{align*}
+%\int \csc(x)\,dx&=\int\frac{\csc(x)\cot(x)+\csc^2(x)}{\cot(x)+\csc(x)}\,dx \\
+%&=-\int\frac{du}{u}
+%\\&=-\ln\left|\csc(x)+\cot(x)\right|+C.
+%\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{0.5cm}
+El resto de integrales resulta de forma similar a las anteriores. 
+
+\begin{teorema}{}{}
+\begin{enumerate}
+   \item $\displaystyle \int  \tan(u)\,du=-\ln \left|\cos (u)\right|+ C$
+  \item $\displaystyle \int   \sec(u)\,du=\ln\left| \sec (u)+\tan(u)\right|+ C$
+   \item $\displaystyle \int  \cot(u)\,du=\ln \left| \sen(u) \right|+ C$
+  \item $\displaystyle \int  \csc(u)\,du=-\ln \left| \csc(u) +\cot(u) \right| +   C$
+ \end{enumerate}
+ \end{teorema}
+
+%%%%%%%%%%%%%%%%%%%% 
+
+%\begin{Ejemplo} Calcular $\displaystyle\int \sqrt{1+\tan^{2}(x)}\,dx$
+%\end{Ejemplo}
+% \solucion
+%\begin{align*}
+%\int \sqrt{1+\tan^{2}(x)}\,dx&=\int\sqrt{\sec^{2}(x)}\,dx && {\blue \mbox{por la
+%identidad: }1+\tan^{2}(x)=\sec^{2}(x)}    \\
+%&=\int\sec(x)\,dx\\
+%&=\ln\left|\sec(u)+\tan(u)\right|+C.
+%\end{align*}
+
+%\begin{Ejemplo} Calcular $\displaystyle\int \frac{4-3\sen 2x}{\cos 2x} \, dx $ \end{Ejemplo}
+%\solucion \\ Sea $\red{u=2x}$ entonces $\red{du=2dx}$ de modo que $\red{\frac{du}{2}=dx}$. Entonces
+%\begin{align*}
+% \int \frac{4-3\sen(2x)}{\cos(2x)}\,dx&=\int \frac{4-3\sen(u)}{\cos(u)}\,\frac{du}{2}\\
+% &=2\int\sec(u)\,du-\frac{3}{2}\int\tan(u)\,du \\
+%  &=2\ln|\sec(u)+\tan(u)|+\frac{3}{2}\ln|\cos(u)|+C\\
+%  &=2\ln|\sec(2x)+\tan(2x)|+\frac{3}{2}\ln|\cos(2x)|+C.
+%\end{align*}
+
+%\begin{Ejemplo}
+%Hallar $\displaystyle\int\frac{\tan(\ln(x))}{x}\,dx$
+%\end{Ejemplo}
+%
+%\solucion Considerando $\red{u=\ln(x)}$, tenemos que $\red{du=\frac{dx}{x}}$. Por lo tanto
+%
+%\begin{align*}
+%\frac{\tan(\ln(x))}{x}\,dx&=\int \tan(u)\,du \\
+% &=-\ln|\cos(u)|+C=-\ln|\cos(\ln (x))|+C.
+%\end{align*}
+\newpage
+\begin{Ejemplo}
+ Halla $\displaystyle\int \frac{\tan^2 (2x)}{\sec (2x)}\, dx$
+\end{Ejemplo}
+\begin{proof}
+Se tiene que
+ \begin{eqnarray*}
+ \int \frac{\tan^2 (2x)}{\sec (2x)}\, dx &=& \int \frac{ \sec^2 (2x)-1}{\sec (2x)}\, dx\\
+ &=& \int \sec   (2x) \, dx - \int \cos (2x) \, dx\\
+ &=&  \frac{1}{2} \ln|\sec (2x) + \tan (2x)|- \frac{1}{2} \sen (2x) + C
+ \end{eqnarray*}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+\begin{Ejemplo} Calcular $\displaystyle\int \frac{\sen^2 (x) - \cos^2 (x)}{\cos(x)}\, dx$
+\end{Ejemplo}
+\begin{proof}
+ \begin{eqnarray*}
+ \displaystyle\int \frac{\sen^2 (x) - \cos^2 (x)}{\cos(x)}\, dx &=& \int \frac{1- \cos^2(x) - \cos^2(x)}{\cos (x)}\,
+dx
+ \\
+   &=& \displaystyle\int \frac{1- 2 \cos^2 (x)}{\cos (x)}\, dx \\
+   &=& \displaystyle\int \sec (x) \, dx - 2 \int\cos (x) \, dx \\ \\
+   &=& \displaystyle\ln|\sec (x) + \tan (x)| - 2 \sen (x) + C
+ \end{eqnarray*}
+\end{proof}
+
+Para resolver la integral 
+$\displaystyle\int sec^2 (x) \ tan(x) dx$, si usamos la sustituci\'on \\ $t = tan(x)$ o la sustituci\'on $u = sec(x)$ encontramos la primitiva de $f(x)= sec^2 (x) \ tan(x)$. 
+\begin{center}
+?`por qu\'e obtiene resultados correctos y diferentes? 
+\end{center}
+
+
+%\begin{Ejemplo} Calcular $\displaystyle\int  \frac{\cot (\ln(x))}{x} dx$
+%\end{Ejemplo}
+%\solucion  \\
+%Realizamos las sustitucionnes $\red{u=\ln x}$ \ y \ $\red{du=\frac{dx}{x}}$ tenemos que
+%\begin{align*}
+%\displaystyle\int  \frac{\cot (\ln(x))}{x} \ dx &  =  \displaystyle\int \cot (u) \ du=  \ln (\sen (u)) +C  \\
+%& =  \ln \vert \sen ( \ln \vert x \vert ) \vert +C
+%\end{align*}
+%
+%\begin{Ejemplo} Calcular  $\displaystyle\int\sen^3\left(x+\frac{1}{x}\right)\cos\left(x+\frac{1}{x}\right)\left(\dfrac{x^2-1}{x^2}\right)dx$
+%\end{Ejemplo}
+%\solucion  \\
+%Sea $\red{u=\sen\left(x+\frac{1}{x}\right)}$ \ y \ $\red{du=\cos\left(x+\frac{1}{x}\right) \left(\dfrac{x^2-1}{x^2}\right)dx}$.
+%\begin{align*}
+%\displaystyle\int u^3 \ du = \frac{u^4}{4}+C =\frac{1}{4}\sen^{4}\left(x+\frac{1}{x}\right)+C
+%\end{align*}
+%
+%\begin{Ejemplo} Calcular las integrales, utilizando la sustituci\'on indicada.
+%$$\displaystyle\int \frac{\cos (x)}{\sqrt{1+\sen  (x)}}\ dx, \qquad t=\sen (x)$$
+%\end{Ejemplo}
+% \solucion  \\
+%Sea $\red{t=\sen(x)}$ \ y \ $\red{dt=\cos(x)}$. Entonces
+%\begin{align*}
+% \displaystyle\int \frac{\cos (x)}{\sqrt{1+\sen  (x)}}\ dx = \displaystyle\int \frac{dt}{\sqrt{1+t}}\ dx
+%\end{align*}
+%Ahora, sea $\red{u=1+t)}$ \ y \ $\red{du=dt}$.Por lo tanto,
+%\begin{align*}
+% \displaystyle\int \frac{\cos (x)}{\sqrt{1+\sen  (x)}}\ dx = 2 \sqrt{1+\sen(x)}+C
+%\end{align*}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{1cm}
+%\begin{changemargin}{-2.5cm}{0cm}
+%\begin{ejer}~ \\ \\
+%\begin{small}
+\problemas{
+\noindent Calcule la integral indefinida, usando si es necesario una o varias sustituciones.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\displaystyle\int \frac{x^2+2x}{\sqrt{x^3+3x^2+1}} dx$
+\item $\displaystyle\int x(x^2+1)\sqrt{4-2x^2-x^4} dx$
+\item $\displaystyle\int 2\frac{x^3}{(x^2+4)^{3/2}} dx$
+\item $\displaystyle\int \frac{x^3}{\sqrt{1-2x^2}} dx$
+\item $\displaystyle\int 3x \sqrt{x+6} dx $
+\item $\displaystyle\int 5x^2 \sqrt{1-x} dx $
+\item $\displaystyle\int -\frac{x^2-1} {\sqrt{2x-1}} dx $
+\item $\displaystyle\int \frac{2x+1} {\sqrt{x+4}} dx $
+\item $\displaystyle\int \frac{x} {(x+1)-\sqrt{x+1}} dx $
+%\item $\displaystyle\int x\sqrt[3]{x+4} dx $
+\item  $\displaystyle\int x^2\sqrt{3-2x}  dx $
+\item  $\displaystyle\int \frac{1}{x^2}\sqrt{1+\frac{1}{3x}}  dx $
+
+\item  $\displaystyle\int \left(x+ \frac{1}{x}\right)^{3/2}\left(\frac{x^2-1}{x^2}\right) dx $
+
+\item $\displaystyle\int \frac{(x+1)^2}{(\frac{x^3}{3}+x^2+x+5)^4} dx $
+\item $\displaystyle\int (x^2+1)^{-3/2} dx $
+\item $\displaystyle\int \frac{x}{\sqrt{\sqrt{(1+x^2)^3}+x^2+1}} dx $
+\item $\displaystyle\int \frac{(x^2+1-2x)^{2/5}}{1-x} dx $
+\item $\displaystyle\int \frac{x}{(x+1)-\sqrt{x+1}} dx $
+%\item $\displaystyle\int \frac{x-1}{x-\sqrt{x}} dx $
+\end{enumerate}
+\end{multicols} 
+%%\begin{multicols}{2}
+%\noindent Calcule la integral indefinida, usando si es necesario una o varias sustituciones.
+%\begin{multicols}{2}
+%\begin{enumerate}
+%\item $\displaystyle\int\frac{x^2+2x}{\sqrt{x^3+3x^2+1}} dx$ \\
+%\item $\displaystyle\int\frac{x^3}{(x^2+4)^{3/2}} \ dx$\\
+%\item $\displaystyle\int \frac{x^3}{\sqrt{1-2x^2}} \ dx$\\
+%\item $\displaystyle\int x\sqrt{x+6} \ dx$\\
+%\item $\displaystyle\int x^2\sqrt{1-x} \ dx$\\
+%\item $\displaystyle\int\frac{x-1}{x-\sqrt{x}} \ dx$\\
+%\item $\displaystyle\int \frac{x^2-1}{\sqrt{2x-1}} \ dx$\\
+%\item $\displaystyle\int \frac{2x+1}{\sqrt{x+4}}\ dx$\\
+%\item $\displaystyle\int \frac{x\ dx}{(x+1)-\sqrt{x+1}} $ \\
+%\item $\displaystyle\int  \frac{\sin(\sqrt{x+1})}{\sqrt{x+1}} \,dx$ %%% ojo
+%
+%\item $\displaystyle\int (x+4)^{1/3} \ dx$\\
+%\item $\displaystyle\int\frac{(1+\ln x)^2}{2x}dx$
+%\item $\displaystyle\int x^2\sqrt{3-2x}dx$\\
+%\item $\displaystyle\int\frac{1}{x^2}\sqrt{1+\frac{1}{3x}}dx$\\
+%\item $\displaystyle\int sen^{2}(x)cos(x)dx$\\
+%\item  $\displaystyle\int\frac{\sen (x)}{\cos^3 (x)}dx$ \\
+%\item $\displaystyle\int\frac{\csc^2 (x)}{\cot^3 (x)}dx$\\
+%\item  $\displaystyle\int \sec^2 (x)\sqrt{\tan (x)}dx$\\
+%\item  $\displaystyle\int\sen x\sqrt{1-\cos xdx}$\\
+%\item $\displaystyle\int \cos^2 (x) \sin (x) \,dx $  % ojo
+%\end{enumerate}
+%\end{multicols}
+
+
+%\noindent Calcular las integrales, utilizando la sustituci\'on indicada.
+%\begin{enumerate}
+%\item[21] $\displaystyle\int \frac{dx}{x\sqrt{x^2-1}}dx, \qquad x=\frac{1}{t}$\\
+%\item[22] $\displaystyle\int \frac{dx}{e^{x}+1}dx, \qquad x=-\ln (t)$ \\
+%\item[23] $\displaystyle\int  x(5x^{2}-3)^{7}dx, \qquad 5x^{2}-3=t$ \\
+%\item[24] $\displaystyle\int \frac{x \ dx}{x+1}\ dx, \qquad t=\sqrt{x+1}$
+%\end{enumerate}
+
+%\newpage
+
+Calcule la integral indefinida de las siguientes funciones trigonom\'etricas.
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{18}
+\item $\displaystyle\int \frac{\sin (\sqrt{x})} {\sqrt{x}} dx $
+\item $\displaystyle\int \frac{\sin (x)} {\cos^3 (x)  } dx $
+\item $\displaystyle\int \frac{\cos (x)} {\sin^{5/2} (x)  } dx $
+\item $\displaystyle\int \frac{\csc^2 (x)} {\cot^3 (x)  } dx $
+\item $\displaystyle\int \frac{\sin (\frac{1}{x}) \cos (\frac{1}{x}) }{x^2} dx $
+\item $\displaystyle\int \sec ^2 (x)\sqrt{\tan (x)} dx $
+\item  $\displaystyle\int \frac{\sin\sqrt{x}}{\sqrt{x}} dx $
+\item $\displaystyle\int \sin (x)\sqrt{1-\cos (x)} dx $
+\item $\displaystyle\int \sin^3 (x)   dx $
+\item $\displaystyle\int \cos^3 (x)   dx $
+\item  $\displaystyle\int \sin^3(x+\frac{1}{x})\cos(x+\frac{1}{x})(\frac{x^2-1}{x^2}) dx $
+\item  $\displaystyle\int \frac{\tan^3\sqrt{x}\sec^2 \sqrt{x}}{\sqrt{x}} dx $
+\item  $\displaystyle\int \frac{\sin^4(1+\sqrt{x})\cos (1+\sqrt{x})}{\sqrt{x}} dx $
+\item  $\displaystyle\int \tan ^2 xdx $
+\item  $\displaystyle\int \cot ^2 xdx $
+\item  $\displaystyle\int [\tan (x/3)+ \cot (x/3)]^2  dx $
+\end{enumerate}
+\end{multicols} 
+
+Calcule la integral indefinida, haciendo si es necesario una sustitución.
+\begin{multicols}{2}
+\begin{enumerate}
+\setcounter{enumi}{34}
+\item $\displaystyle\int \frac{1} {2x+7  } dx $
+\item $\displaystyle\int \frac{\cos x} {2+\sin x  } dx $
+\item $\displaystyle\int \frac{1} {x} \ln^3 x dx $
+\item $\displaystyle\int \frac{(1+\ln x)^2} {2x  } dx $
+\item $\displaystyle\int \frac{2-3\sin2x}{\cos 2x} dx$
+\item $\displaystyle\int \frac{2x^3}{x^2 -4} dx$
+\item $\displaystyle\int \frac{x^3}{\sqrt{1-2x^2}} dx$
+\item $\displaystyle\int \frac{1}{x\ln x} dx$
+\item $\displaystyle\int \frac{1}{\sqrt{x}(1+\sqrt{ x})} dx$
+\item $\displaystyle\int \frac{2\ln x+ 1}{x[\ln^2 x+\ln x]} dx$
+\item $\displaystyle\int \frac{2+\ln^2 x}{x[1-\ln x]} dx$
+\item $\displaystyle\int \frac{\tan(\ln x)}{x} dx$
+\item $\displaystyle\int 2 ^{x\ln x}(\ln x+1)dx$
+\item $\displaystyle\int \frac{\tan ^22x}{\sec 2x} dx$
+\item $\displaystyle\int \frac{\sec^2x}{\tan x} dx$
+\item $\displaystyle\int \frac{\sin^2x-\cos^2x}{\cos x} dx$
+\item $\displaystyle\int \frac{2-3\sin2x}{\cos 2x} dx$
+\item $\displaystyle\int \frac{\sin 3x}{\cos 3x-1} dx$
+\item $\displaystyle\int (\tan 2x -\sec 2x) dx$
+\item $\displaystyle\int \frac{1}{\cos4x} dx$
+\item $\displaystyle\int \frac{1}{2\sin(3x+1)} dx$
+\item $\displaystyle\int \frac{x^4-5x^2+3x-4} {x  } dx $
+\item $\displaystyle\int \frac{x^4-5x^2+3x-4} {x+1} dx $
+\item $\displaystyle\int \frac{x^3} {x-2} dx $
+\item $\displaystyle\int \frac{3x^2-5x+1} {x-4} dx $
+%\item $\int \frac{1} {\sqrt[3]{x^2}-\sqrt{x}} dx $\;\; Sugerencia: Haga $x=z^6$.
+\end{enumerate}
+\end{multicols} 
+
+% \noindent Calcule la integral indefinida, haciendo uso de los resultados sobre la funci\'on logar\'itimica.
+%\begin{multicols}{2}
+%\begin{enumerate}
+%    \item[25] $\displaystyle\int\frac{2-3\sen 2x}{\cos 2x}$ \\
+%    \item[26] $\displaystyle\int\frac{2x^3}{x^2-4}dx$ \\
+%    \item[27] $\displaystyle\int\frac{x^3}{\sqrt{1-2x^2}}dx$ \\
+%    \item[28] $\displaystyle\int\frac{1}{x\ln x}dx$ \\
+%    \item[29] $\displaystyle\int\frac{1}{\sqrt{x}(1+\sqrt{x})}dx$ \\
+%\columnbreak
+%\item[30] $\displaystyle\int\frac{2+\ln^2 x}{x[1-\ln x]}dx$ \\
+%    \item[31] $\displaystyle\int\frac{\tan(\ln x)}{x}dx$ \\
+%    \item[32] $\displaystyle\int 2^{x\ln x}(\ln x+1)dx$ \\
+%    \item[33] $\displaystyle\int\frac{\tan^2 2x}{\sec 2x}dx$ \\
+%    \item[34] $\displaystyle\int\frac{\sec^2 x}{\tan x}dx$ \\
+%\end{enumerate}
+%\end{multicols}
+
+
+
+%%\item  Calcular las siguientes integrales
+%\begin{enumerate}
+% \begin{multicols}{2}
+%    \item $\displaystyle\int \dfrac{x+1}{\sqrt{x^2 +2x+3}} \,dx $
+
+% \item $\displaystyle\int  x^2 \sqrt{x+1}\,dx$
+% \item $\displaystyle\int x^2(x^3+5)^4 \,dx$
+% \columnbreak
+%  \item $\displaystyle\int x \sin(x^2) \, dx  $
+% \item $\displaystyle\int (8x^2+1)^2(16x)dx$
+% \item $\displaystyle\int 4x^3 \sin(x^4) \, dx $
+% \item  $  \displaystyle\int \dfrac{\sqrt{1+\sqrt{x}}}{\sqrt{x}} \quad d x $
+%\item $\displaystyle\int \dfrac{ 12x^3 \sqrt{ \left( ln(x^4+1) \right)^3  }}{x^4 +1} \, dx $
+%  \end{multicols}
+% \end{enumerate}
+
+% \item En los  aplicar el método de sustitución para calcular las integrales.
+%\begin{enumerate}
+%\begin{multicols}{2}
+%\item $\int \sqrt{2x+1}\, dx$
+%\item $\int x\sqrt{1+3x} \, dx$
+%\item $\int x^2\sqrt{x+1} \, dx$
+%\item $\int\limits_{-2/3}^{1/3} \frac{x \, dx}{\sqrt{2-3x}}$
+%\item $\int \frac{(x+1) \, dx}{(x^2 + 2x +2)^3}$
+%\item $\int \sen^3 x \, dx$
+%\item $\int z(z-1)^{1/3}\, dz$
+%\item $\int\frac{\cos x \, dx}{\sen^3 x}$
+%\item $\int\limits_0^{\pi/4} \cos 2x\sqrt{4-\sen 2x} \, dx$
+%\item $\int\frac{\sen x \, dx}{(3 + \cos x)^2}$
+%\columnbreak
+%\item $\int\frac{\sen x \, dx}{\sqrt{\cos^3 x}}$
+%\item $\int\limits_3^8\frac{\sen \sqrt{x+1} \, dx}{\sqrt{x+1}}$
+%\item $\int x^{n-1}\sen x^n\, dx$, $n\ne 0$
+%\item $\int\frac{x^5 \, dx}{\sqrt{1-x^6}}$
+%\item $\int t(1+t)^{1/4}\, dt$
+%\item $\int (x^2+1)^{-3/2}\, dx$
+%\item $\int x^2(8x^3+27)^{2/3}\, dx$
+%\item $\int\frac{(\sen x + \cos x) \, dx}{(\sen x - \cos x)^{1/3}}$
+%\item $\int\frac{x \, dx}{\sqrt{1+ x^2 + \sqrt{(1+x^2)^3}}}$
+%\item  $\int\frac{(x^2+ 1 - 2x)^{1/5} \, dx}{1-x}$
+%\end{multicols}
+%\end{enumerate}
+%\end{multicols}
+%\end{small}
+%\end{ejer}
+%\end{changemargin}
+                      }
+\newpage
+\restoregeometry %restaura los margenes de la p\'agina
