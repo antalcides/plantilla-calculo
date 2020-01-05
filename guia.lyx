@@ -147,11 +147,11 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 tableofcontents
 \end_layout
@@ -3194,7 +3194,7 @@ status open
 
 
 \backslash
-begin{teorema}
+begin{teorema}{}{}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3972,6 +3972,20 @@ Ejercicio
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=TeX"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Ejercicio}{}{}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3981,6 +3995,20 @@ Ejercicio
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=TeX"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Ejercicio}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
